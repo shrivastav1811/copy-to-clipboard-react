@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React, {useState} from 'react';
+import Copyelement from './Copyelement';
 function App() {
+
+  const [value, setvalue] =useState("");
+  const [data, setData]= useState("");
+   const handleSubmit = (e)=>{
+     e.preventDefault();
+     setData(value);
+     setvalue("")
+   }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className='container'> 
+      <h1>React copy to clipboard</h1>
+      <form action="" onSubmit={handleSubmit}>
+      <input className="input" type="text" placeholder='write to copy text' value={value} onChange={(e)=> setvalue(e.target.value)} />
+      </form>
+
+      {data && <Copyelement data={data} setData={setData} />}
+      </div>
+    </>
   );
 }
 

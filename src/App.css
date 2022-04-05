@@ -12,7 +12,11 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -34,5 +38,53 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.container{
+  width:100%
+}
+input[type="text"] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+
+.btn {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.btn-clear {
+  background-color: #008CBA;
+  margin-left: 4px ;
+}
+@media (max-width: 368px){
+  .input{
+    width: 100%;
+    height: auto;
+    margin-left: 15vmax !important;
+  }
+  .container h1{
+    font-size: 5vmax !important;
+    text-align: center;
+    margin-top: 6vmax;
+    margin-bottom: 4vmax;
+  }
+  .data{
+    margin: 2vmax 0 0 21vmax !important;
+  }
+  .btn{
+    margin-top: 5vmax;
+    margin-left: 7vmax;
   }
 }
